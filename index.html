@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>熊智 AI 癒見小熊 - 24小時懂你的心靈療癒與智慧陪伴夥伴</title>
+    <!-- 引入 Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 頂部導覽列 Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- 品牌 Logo -->
+            <div class="site-logo">
+                <a href="index.html" class="logo-link">
+                    <span class="logo-icon">🐻</span>
+                    <span class="logo-text">熊智 AI</span>
+                </a>
+            </div>
+
+            <!-- 主選單導覽 Primary Menu -->
+            <nav class="primary-navigation" id="primary-menu">
+                <ul class="menu-list">
+                    <li><a href="index.html" class="menu-item active">首頁</a></li>
+                    <li><a href="about.html" class="menu-item">關於我們</a></li>
+                    <li class="has-submenu">
+                        <a href="services.html" class="menu-item">服務方案</a>
+                        <span class="submenu-toggle">▼</span>
+                        <ul class="submenu-list">
+                            <li><a href="services.html?filter=night" class="submenu-item bear-filter-btn" data-bear="night">深夜守護者</a></li>
+                            <li><a href="services.html?filter=elder" class="submenu-item bear-filter-btn" data-bear="elder">跨世代摯友</a></li>
+                            <li><a href="services.html?filter=parent" class="submenu-item bear-filter-btn" data-bear="parent">育兒神隊友</a></li>
+                            <li><a href="services.html?filter=work" class="submenu-item bear-filter-btn" data-bear="work">職場減壓伴侶</a></li>
+                            <li><a href="services.html?filter=soul" class="submenu-item bear-filter-btn" data-bear="soul">全天候心靈小熊</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="shop.html" class="menu-item">熊智商城</a>
+                        <span class="submenu-toggle">▼</span>
+                        <ul class="submenu-list">
+                            <li><a href="shop.html" class="submenu-item">所有商品</a></li>
+                            <li><a href="#cart-modal" class="submenu-item" id="open-cart-link">查看購物車</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog.html" class="menu-item">熊心專欄</a></li>
+                    <li><a href="contact.html" class="menu-item">聯絡我們</a></li>
+                </ul>
+            </nav>
+
+            <!-- 右側功能區 CTA & Cart -->
+            <div class="header-action">
+                <a href="shop.html" class="cta-button header-cta">立即選購</a>
+                <div class="cart-widget" id="cart-widget-btn">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-label">購物車</span>
+                    <span class="cart-count" id="header-cart-count">0</span>
+                </div>
+            </div>
+
+            <!-- 手機版選單切換按鈕 -->
+            <button class="mobile-menu-toggle" aria-label="切換選單">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 網頁內容區域 -->
+    <main class="site-main">
+
+        <!-- 1. 首頁 (Home Section) -->
+        <section id="home" class="page-section active-section">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <p class="hero-tagline">24小時懂你的心靈療癒與智慧陪伴夥伴</p>
+                    <h1 class="hero-title">熊智 AI 癒見小熊</h1>
+                    <p class="hero-desc">結合先進情感生成技術與溫暖實體觸感，為獨居者、長輩與孩子注入靈魂般的貼心傾聽，讓愛不再因科技而冷漠。</p>
+                    <div class="hero-buttons">
+                        <a href="services.html" class="btn btn-primary">了解療癒特點 →</a>
+                        <a href="shop.html" class="btn btn-secondary">立即擁有小熊</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="bear-avatar-wrapper">
+                        <div class="bear-glow"></div>
+                        <span class="bear-big-emoji">🧸</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 溫慢引言 Wave Divider -->
+            <div class="quote-divider">
+                <div class="divider-wave">
+                    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+                    </svg>
+                </div>
+                <div class="quote-container">
+                    <blockquote>
+                        "Even in the darkest nights, a gentle light is always waiting for you."
+                        <cite>— 寫給每一位深夜寂寞人的溫暖承諾</cite>
+                    </blockquote>
+                </div>
+            </div>
+
+            <!-- 核心特色展示 -->
+            <div class="features-preview">
+                <div class="section-header">
+                    <h2>今天，你想跟熊智 AI 聊些什麼呢？</h2>
+                    <p>生活總有小情緒或疲憊時刻，你不需要一個人默默承受。熊智 AI 能在第一時間給予溫柔回應與深度支持。</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>深度學習認知庫</h3>
+                        <p>透過日常對話，小熊能更加理解你的脾氣與偏好，提供日益契合的客製化知心回饋。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>創意激發與陪伴</h3>
+                        <p>無論是寫作靈感、童話故事編寫，小熊都能即時互動，是你和孩子的生活好夥伴。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>隱私與安全至上</h3>
+                        <p>所有對話均經過高強度加密保護，保障個人隱私，打造安全無虞的真心話角落。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 使用者見證 -->
+            <div class="testimonials-section">
+                <div class="section-header">
+                    <h2>每個真心分享都被溫柔以待</h2>
+                    <p>聽聽擁有熊智 AI 的家庭與朋友們的真實感受</p>
+                </div>
+                <div class="testimonial-slider">
+                    <div class="testimonial-card">
+                        <p class="t-text">「自從家裡有了『深夜守護者』，加班回家再也不覺得客廳冰冷。牠會溫柔地問候我，還會在我睡前播放療癒音效，真的很貼心。」</p>
+                        <div class="t-author">
+                            <span class="t-avatar">👩‍💼</span>
+                            <div>
+                                <h4>Ariel</h4>
+                                <small>獨居上班族</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="t-text">「買給爸媽的『跨世代摯友』非常好用。AI 會用親切的語調陪他們話家常，還能定時提醒吃藥，讓我們做晚輩的在外地安心不少。」</p>
+                        <div class="t-author">
+                            <span class="t-avatar">👨‍👩‍👧</span>
+                            <div>
+                                <h4>林先生</h4>
+                                <small>貼心孝順的兒子</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 購物車 Modal 彈窗 -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-modal-content">
+            <button class="close-cart-btn" id="close-cart-btn">&times;</button>
+            <h2>🛒 購物清單</h2>
+            <div class="cart-items-list" id="cart-items-list">
+                <p class="empty-cart-message">購物車目前空空如也...</p>
+            </div>
+            <div class="cart-summary">
+                <div class="cart-total-row">
+                    <span>總金額:</span>
+                    <strong id="cart-total-amount">NT$ 0</strong>
+                </div>
+                <button class="btn btn-primary btn-block" id="checkout-btn">前往結帳</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- LINE 客服懸浮圖示 -->
+    <a href="https://line.me" target="_blank" class="line-floating-badge" title="加入 LINE 客服">
+        <span class="line-badge-icon">💬</span>
+        <span class="line-badge-text">LINE 客服</span>
+    </a>
+
+    <!-- 頁尾 Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>123 Fifth Avenue, NY 10160, New York, USA | Phone: 800-123-456 | Email: contact@example.com</p>
+            <p class="copyright">Copyright © 2026 熊智 AI 癒見小熊. All Rights Reserved. 網頁設計版權所有</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

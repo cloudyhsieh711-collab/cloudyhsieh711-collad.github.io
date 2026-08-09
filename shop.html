@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>熊智商城 - 熊智 AI 癒見小熊</title>
+    <!-- 引入 Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 頂部導覽列 Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- 品牌 Logo -->
+            <div class="site-logo">
+                <a href="index.html" class="logo-link">
+                    <span class="logo-icon">🐻</span>
+                    <span class="logo-text">熊智 AI</span>
+                </a>
+            </div>
+
+            <!-- 主選單導覽 Primary Menu -->
+            <nav class="primary-navigation" id="primary-menu">
+                <ul class="menu-list">
+                    <li><a href="index.html" class="menu-item">首頁</a></li>
+                    <li><a href="about.html" class="menu-item">關於我們</a></li>
+                    <li class="has-submenu">
+                        <a href="services.html" class="menu-item">服務方案</a>
+                        <span class="submenu-toggle">▼</span>
+                        <ul class="submenu-list">
+                            <li><a href="services.html?filter=night" class="submenu-item bear-filter-btn" data-bear="night">深夜守護者</a></li>
+                            <li><a href="services.html?filter=elder" class="submenu-item bear-filter-btn" data-bear="elder">跨世代摯友</a></li>
+                            <li><a href="services.html?filter=parent" class="submenu-item bear-filter-btn" data-bear="parent">育兒神隊友</a></li>
+                            <li><a href="services.html?filter=work" class="submenu-item bear-filter-btn" data-bear="work">職場減壓伴侶</a></li>
+                            <li><a href="services.html?filter=soul" class="submenu-item bear-filter-btn" data-bear="soul">全天候心靈小熊</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="shop.html" class="menu-item active">熊智商城</a>
+                        <span class="submenu-toggle">▼</span>
+                        <ul class="submenu-list">
+                            <li><a href="shop.html" class="submenu-item">所有商品</a></li>
+                            <li><a href="#cart-modal" class="submenu-item" id="open-cart-link">查看購物車</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog.html" class="menu-item">熊心專欄</a></li>
+                    <li><a href="contact.html" class="menu-item">聯絡我們</a></li>
+                </ul>
+            </nav>
+
+            <!-- 右側功能區 CTA & Cart -->
+            <div class="header-action">
+                <a href="shop.html" class="cta-button header-cta">立即選購</a>
+                <div class="cart-widget" id="cart-widget-btn">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-label">購物車</span>
+                    <span class="cart-count" id="header-cart-count">0</span>
+                </div>
+            </div>
+
+            <!-- 手機版選單切換按鈕 -->
+            <button class="mobile-menu-toggle" aria-label="切換選單">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 網頁內容區域 -->
+    <main class="site-main">
+        <!-- 4. 商店購物車 (Shop Section) -->
+        <section id="shop" class="page-section active-section">
+            <div class="shop-hero">
+                <h2>熊智官方旗艦商店</h2>
+                <p>結合 WooCommerce 電商系統，訂購專屬您的 AI 療癒小熊</p>
+            </div>
+            
+            <div class="product-grid">
+                <!-- 商品 1 -->
+                <div class="product-card" data-id="1" data-name="熊智 AI 療癒小熊 - 基礎版" data-price="3980">
+                    <div class="product-img-placeholder">🧸 <span class="badge blue">熱銷</span></div>
+                    <div class="product-info">
+                        <h3>熊智 AI 療癒小熊 (基礎款)</h3>
+                        <p class="product-desc">隨機搭配一款經典性格，適合基礎日常互動與療癒陪伴。</p>
+                        <div class="product-meta">
+                            <span class="price">NT$ 3,980</span>
+                            <button class="add-to-cart-btn btn-sm">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 商品 2 -->
+                <div class="product-card" data-id="2" data-name="熊智 AI 療癒小熊 - 五合一旗艦款" data-price="5880">
+                    <div class="product-img-placeholder">🐻 <span class="badge gold">旗艦</span></div>
+                    <div class="product-info">
+                        <h3>熊智 AI 療癒小熊 (五合一旗艦款)</h3>
+                        <p class="product-desc">內建 5 種性格切換（深夜、長輩、育兒、減壓、心靈），支援極致體驗。</p>
+                        <div class="product-meta">
+                            <span class="price">NT$ 5,880</span>
+                            <button class="add-to-cart-btn btn-sm">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 商品 3 -->
+                <div class="product-card" data-id="3" data-name="AI 深度靈魂雲端訂閱服務 (一年期)" data-price="1200">
+                    <div class="product-img-placeholder">☁️ <span class="badge green">訂閱</span></div>
+                    <div class="product-info">
+                        <h3>AI 深度智慧雲端訂閱 (年繳)</h3>
+                        <p class="product-desc">解鎖無限字數高階對話模組、方言擴充包與每月情感健康分析報告。</p>
+                        <div class="product-meta">
+                            <span class="price">NT$ 1,200 / 年</span>
+                            <button class="add-to-cart-btn btn-sm">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 購物車 Modal 彈窗 -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-modal-content">
+            <button class="close-cart-btn" id="close-cart-btn">&times;</button>
+            <h2>🛒 購物清單</h2>
+            <div class="cart-items-list" id="cart-items-list">
+                <p class="empty-cart-message">購物車目前空空如也...</p>
+            </div>
+            <div class="cart-summary">
+                <div class="cart-total-row">
+                    <span>總金額:</span>
+                    <strong id="cart-total-amount">NT$ 0</strong>
+                </div>
+                <button class="btn btn-primary btn-block" id="checkout-btn">前往結帳</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- LINE 客服懸浮圖示 -->
+    <a href="https://line.me" target="_blank" class="line-floating-badge" title="加入 LINE 客服">
+        <span class="line-badge-icon">💬</span>
+        <span class="line-badge-text">LINE 客服</span>
+    </a>
+
+    <!-- 頁尾 Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>123 Fifth Avenue, NY 10160, New York, USA | Phone: 800-123-456 | Email: contact@example.com</p>
+            <p class="copyright">Copyright © 2026 熊智 AI 癒見小熊. All Rights Reserved. 網頁設計版權所有</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

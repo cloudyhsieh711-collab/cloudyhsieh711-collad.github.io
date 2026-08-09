@@ -1,0 +1,368 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -224,
+        -608
+      ],
+      "id": "37cd0d3f-7ac3-40be-aa56-27fa76ac6f3f",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "content": "## Tigger觸發\n\n"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -240,
+        -16
+      ],
+      "id": "703c2f74-38eb-44c1-ad16-5f7d36e24bb7",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Input輸入\n"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        96,
+        0
+      ],
+      "id": "c6202cd5-e1c9-47ce-8ce9-d62685564736",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## process處理\n"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        384,
+        -16
+      ],
+      "id": "6d713372-cfc2-4e20-9f74-ea17ffb5259a",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## output輸出\n\n"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        688,
+        -16
+      ],
+      "id": "672a4358-8569-4b26-89c3-5d4b68334225",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "url": "https://feeds.feedburner.com/rsscna/technology",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        16,
+        -464
+      ],
+      "id": "ac987003-4f80-4e13-819f-9ba799c01fdf",
+      "name": "RSS Read"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "5fccae12-1de9-4d52-a510-0ebb2025df60",
+              "leftValue": "={{ $json.title }}",
+              "rightValue": "AI",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        192,
+        -464
+      ],
+      "id": "0814996b-67c7-4ced-80c6-4ccfdc802c19",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-flash-lite-latest",
+          "mode": "list",
+          "cachedResultName": "models/gemini-flash-lite-latest"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "={{ $json.data.toJsonString() }}\n幫我根據原始資料組合成乾淨的html，我要在下一個n8n的gmail節點發送信件內容，回傳的json欄位分為html以及subject，要給我乾淨的json格式，不要有補充文字，開頭不要有```json\\n的文字\n{\n\"subject\": \"自動化流程資料處理通知\",\n\"html\": \"<meta charset=\"UTF-8\"><body style=\"font-family: Arial, sans-serif; line-height: 1.6; color: #333333; background-color: #f4f4f4; margin: 0; padding: 0;\"><div style=\"max-width: 600px; margin: 20px auto; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);\"><h2 style=\"color: #2c3e50; border-bottom: 2px solid #eaeaea; padding-bottom: 10px; margin-top: 0;\">資料處理通知<p style=\"margin-bottom: 15px;\">您好，以下是系統自動化流程所接收到的原始資料內容：<div style=\"background-color: #f9f9f9; border-left: 4px solid #3498db; padding: 15px; margin-bottom: 20px; font-family: monospace; font-size: 14px; word-break: break-all; white-space: pre-wrap;\">{{ $json.data.toJsonString() }}<p style=\"font-size: 12px; color: #7f8c8d; border-top: 1px solid #eaeaea; padding-top: 15px; margin-bottom: 0;\">此封信件為 n8n 自動化系統發送，請勿直接回覆。\"\n}\n"
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        688,
+        -464
+      ],
+      "id": "5b1ec1b6-e611-4993-bf12-3c81717843d7",
+      "name": "Message a model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "8WBFnWu2s82egoyW",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        480,
+        -624
+      ],
+      "id": "65eede21-5cb1-4121-ac91-ef9f7b4fc0e4",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ed261df1-c47c-4955-9d11-d9426b031862",
+              "name": "subject",
+              "value": "={{ $json.content.parts[0].text.parseJson().subject}}",
+              "type": "string"
+            },
+            {
+              "id": "3f3e1462-ad6d-4acc-85ca-2c4aa7933113",
+              "name": "html",
+              "value": "={{ $json.content.parts[0].text.parseJson().html }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        992,
+        -448
+      ],
+      "id": "be3b52a7-79d8-494f-9f80-ee0accbab338",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "sendTo": "cloudyhsieh711@gmail.com",
+        "subject": "={{ $json.subject }}",
+        "message": "={{ $json.html }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        1200,
+        -448
+      ],
+      "id": "ef06b55e-b58d-4cd4-af0a-7e708076b192",
+      "name": "Send a message",
+      "webhookId": "4cfbbffb-a32c-45cf-a0d3-7fec12d1a585",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "RfUUPnmBVgj9jvNJ",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -192,
+        -384
+      ],
+      "id": "e6761f1a-479a-461f-a3b0-f072549c4836",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:8000/api/posts",
+        "sendHeaders": true,
+        "headers": {
+          "values": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "subject",
+              "value": "={{ $json.subject }}"
+            },
+            {
+              "name": "html",
+              "value": "={{ $json.html }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1220,
+        -260
+      ],
+      "id": "e0bfa7c7-c48e-49b8-a621-9988ff888b12",
+      "name": "Publish to Website"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "RSS Read",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RSS Read": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Publish to Website",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "RSS Read",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "f71c20e7-b92d-408f-9e38-7285fdc2dcde",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "ee7cb5c4f178f63ee1e91e80ef6be1ac1972be5b2b585da18fa2efbc0d45e054"
+  },
+  "id": "EQiwhQOsrRjhW3Q0",
+  "tags": []
+}

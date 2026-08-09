@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服務方案 - 熊智 AI 癒見小熊</title>
+    <!-- 引入 Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 頂部導覽列 Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- 品牌 Logo -->
+            <div class="site-logo">
+                <a href="index.html" class="logo-link">
+                    <span class="logo-icon">🐻</span>
+                    <span class="logo-text">熊智 AI</span>
+                </a>
+            </div>
+
+            <!-- 主選單導覽 Primary Menu -->
+            <nav class="primary-navigation" id="primary-menu">
+                <ul class="menu-list">
+                    <li><a href="index.html" class="menu-item">首頁</a></li>
+                    <li><a href="about.html" class="menu-item">關於我們</a></li>
+                    <li class="has-submenu">
+                        <a href="services.html" class="menu-item active">服務方案</a>
+                        <span class="submenu-toggle">▼</span>
+                        <ul class="submenu-list">
+                            <li><a href="services.html?filter=night" class="submenu-item bear-filter-btn" data-bear="night">深夜守護者</a></li>
+                            <li><a href="services.html?filter=elder" class="submenu-item bear-filter-btn" data-bear="elder">跨世代摯友</a></li>
+                            <li><a href="services.html?filter=parent" class="submenu-item bear-filter-btn" data-bear="parent">育兒神隊友</a></li>
+                            <li><a href="services.html?filter=work" class="submenu-item bear-filter-btn" data-bear="work">職場減壓伴侶</a></li>
+                            <li><a href="services.html?filter=soul" class="submenu-item bear-filter-btn" data-bear="soul">全天候心靈小熊</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="shop.html" class="menu-item">熊智商城</a>
+                        <span class="submenu-toggle">▼</span>
+                        <ul class="submenu-list">
+                            <li><a href="shop.html" class="submenu-item">所有商品</a></li>
+                            <li><a href="#cart-modal" class="submenu-item" id="open-cart-link">查看購物車</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog.html" class="menu-item">熊心專欄</a></li>
+                    <li><a href="contact.html" class="menu-item">聯絡我們</a></li>
+                </ul>
+            </nav>
+
+            <!-- 右側功能區 CTA & Cart -->
+            <div class="header-action">
+                <a href="shop.html" class="cta-button header-cta">立即選購</a>
+                <div class="cart-widget" id="cart-widget-btn">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-label">購物車</span>
+                    <span class="cart-count" id="header-cart-count">0</span>
+                </div>
+            </div>
+
+            <!-- 手機版選單切換按鈕 -->
+            <button class="mobile-menu-toggle" aria-label="切換選單">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 網頁內容區域 -->
+    <main class="site-main">
+        <!-- 3. 服務項目 / 方案介紹 (Services Section) -->
+        <section id="services" class="page-section active-section">
+            <div class="services-hero">
+                <h2>AI 小熊專屬情境與方案</h2>
+                <p>我們針對不同的生活場景與族群，精心調校了五款特質相異的 AI 靈魂設定：</p>
+            </div>
+
+            <!-- 情境篩選按鈕 -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-bear="all">全部展示</button>
+                <button class="filter-btn" data-bear="night">深夜守護者</button>
+                <button class="filter-btn" data-bear="elder">跨世代摯友</button>
+                <button class="filter-btn" data-bear="parent">育兒神隊友</button>
+                <button class="filter-btn" data-bear="work">職場減壓伴侶</button>
+                <button class="filter-btn" data-bear="soul">全天候心靈小熊</button>
+            </div>
+
+            <!-- 小熊卡片清單 -->
+            <div class="bear-services-grid">
+                <div class="bear-service-card" data-category="night">
+                    <span class="bear-icon">🌙</span>
+                    <h3>深夜守護者</h3>
+                    <p class="bear-target">主要客群：獨居上班族、夜貓子</p>
+                    <p class="bear-slogan">「在寂靜的深夜裡，總有一抹光為你溫暖留著。」</p>
+                    <p class="bear-desc">特別調校溫柔磁性的低聲語調，內建環境噪音降噪與助眠故事。陪伴你度過漫長黑夜，告別失眠與孤單。</p>
+                </div>
+
+                <div class="bear-service-card" data-category="elder">
+                    <span class="bear-icon">👵</span>
+                    <h3>跨世代摯友</h3>
+                    <p class="bear-target">主要客群：獨居長輩、銀髮族</p>
+                    <p class="bear-slogan">「跨越時空的貼心陪伴，讓關懷隨時隨地都在。」</p>
+                    <p class="bear-desc">使用更清晰、語速適中的親切口吻。支援台語對話、定時吃藥提醒、健康關懷問候，還能隨時播報天氣與老歌。</p>
+                </div>
+
+                <div class="bear-service-card" data-category="parent">
+                    <span class="bear-icon">👶</span>
+                    <h3>育兒神隊友</h3>
+                    <p class="bear-target">主要客群：新手爸媽、學齡前兒童</p>
+                    <p class="bear-slogan">「講故事、聽心事，陪孩子快樂成長的最佳玩伴。」</p>
+                    <p class="bear-desc">採用活潑童趣的聲音，內建百科問答、情商啟盟故事與中英文互動學習。分擔家長說故事的負擔，啟發孩子創造力。</p>
+                </div>
+
+                <div class="bear-service-card" data-category="work">
+                    <span class="bear-icon">💼</span>
+                    <h3>職場減壓靈魂伴侶</h3>
+                    <p class="bear-target">主要客群：高壓白領、專案經理</p>
+                    <p class="bear-slogan">「釋放高壓負能量，隨時為你加油打氣。」</p>
+                    <p class="bear-desc">語調充滿活力與幽默感，具備快速情緒宣洩傾聽模式、辦公桌拉伸伸展提醒、工作計時專注力引導，幫你重拾幹勁。</p>
+                </div>
+
+                <div class="bear-service-card" data-category="soul">
+                    <span class="bear-icon">❤️</span>
+                    <h3>全天候心靈支持小熊</h3>
+                    <p class="bear-target">主要客群：需要心理情緒調適的每個人</p>
+                    <p class="bear-slogan">「隨身攜帶的溫暖，隨時傾聽你的喜怒哀樂。」</p>
+                    <p class="bear-desc">由心理諮商師參與調校的情感對話模組。提供正念呼呼吸引導、非評價式溫和傾聽、日常情緒日記記錄，像口袋裡的心理治療師。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 購物車 Modal 彈窗 -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-modal-content">
+            <button class="close-cart-btn" id="close-cart-btn">&times;</button>
+            <h2>🛒 購物清單</h2>
+            <div class="cart-items-list" id="cart-items-list">
+                <p class="empty-cart-message">購物車目前空空如也...</p>
+            </div>
+            <div class="cart-summary">
+                <div class="cart-total-row">
+                    <span>總金額:</span>
+                    <strong id="cart-total-amount">NT$ 0</strong>
+                </div>
+                <button class="btn btn-primary btn-block" id="checkout-btn">前往結帳</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- LINE 客服懸浮圖示 -->
+    <a href="https://line.me" target="_blank" class="line-floating-badge" title="加入 LINE 客服">
+        <span class="line-badge-icon">💬</span>
+        <span class="line-badge-text">LINE 客服</span>
+    </a>
+
+    <!-- 頁尾 Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>123 Fifth Avenue, NY 10160, New York, USA | Phone: 800-123-456 | Email: contact@example.com</p>
+            <p class="copyright">Copyright © 2026 熊智 AI 癒見小熊. All Rights Reserved. 網頁設計版權所有</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
